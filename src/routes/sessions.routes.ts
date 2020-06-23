@@ -5,19 +5,15 @@ import AuthenticateUserService from '../services/AuthenticateUserService';
 const usersRouter = Router();
 
 usersRouter.post('/', async (request, response) => {
-  try {
-    const { email, password } = request.body;
+  const { email, password } = request.body;
 
-    const sessionUser = new AuthenticateUserService();
+  const sessionUser = new AuthenticateUserService();
 
-    const { user, token } = await sessionUser.execute({ email, password });
+  const { user, token } = await sessionUser.execute({ email, password });
 
-    delete user.password;
+  delete user.password;
 
-    return response.json({ user, token });
-  } catch (error) {
-    return response.status(error.statusCode).json({ error: error.message });
-  }
+  return response.json({ user, token });
 });
 
 export default usersRouter;
