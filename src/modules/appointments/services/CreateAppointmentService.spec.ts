@@ -30,6 +30,10 @@ describe('CreateAppointment', () => {
   });
 
   it('should not be able to create two appointments on the same time', async () => {
+    jest.spyOn(Date, 'now').mockImplementationOnce(() => {
+      return new Date(2020, 6, 5, 11).getTime();
+    });
+
     const appointmentDate = new Date(2020, 6, 5, 12);
 
     await createAppointment.execute({
