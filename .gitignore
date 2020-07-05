@@ -5,6 +5,6 @@ build/
 temp/
 
 tmp/*
-!tmp/.gitkeep
+!tmp/uploads/.gitkeep
 coverage/*
 !coverage/.gitkeep
