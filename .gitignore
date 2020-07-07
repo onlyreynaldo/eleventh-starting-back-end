@@ -3,6 +3,7 @@ build/
 tmp/*
 tmp/uploads/*
 coverage/*
+.env
 
 !tmp/.gitkeep
 !tmp/uploads
