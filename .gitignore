@@ -4,6 +4,7 @@ tmp/*
 tmp/uploads/*
 coverage/*
 .env
+ormconfig.json
 
 !tmp/.gitkeep
 !tmp/uploads
